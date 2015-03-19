@@ -11,6 +11,7 @@ gauges as shown below.
 
 ## FuelGauge
 
+![Image of fuel gauge](/assets/FuelGauge180.png)
 The FuelGauge is an automotive style fuel gauge.
 It is packaged as an iOS framework that you can include in your
 own projects as source code, or simply add it as a separate package.
@@ -20,14 +21,13 @@ It implements spring animations.
 
 * fuelLevel: Float (0.0 to 1.0)
 
-![Image of fuel gauge](/assets/FuelGauge180.png)
 
 ## Speedometer
 
-A speedometer gauge is in the works.
 ![Image of speedometer gauge](/assets/Speedometer180.png)
+A speedometer gauge is in the works.
 
 ## Tachometer
 
-A tachometer gauge is in the works.
 ![Image of tachometer gauge](/assets/Tachometer180.png)
+A tachometer gauge is in the works.
