@@ -107,7 +107,7 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testCurrentRotationIsInitiallyZero() {
         let rotation = fuelGauge.currentRotation
-        XCTAssertEqual(rotation, 0.0, "Initial rotation expected to be zero but is \(rotation)")
+        XCTAssertEqual(rotation, Float(0.0), "Initial rotation expected to be zero but is \(rotation)")
     }
     
     //MARK: Helper methods

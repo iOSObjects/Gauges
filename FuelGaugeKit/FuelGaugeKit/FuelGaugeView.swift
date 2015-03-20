@@ -12,6 +12,8 @@ class FuelGaugeView: UIView {
 
     var fuelLevel: Float = 0.0
     
+    var currentRotation: Float = 0.0
+    
     var backgroundView:UIImageView!
     var needleView:UIImageView!
     var shadowView:UIImageView!
