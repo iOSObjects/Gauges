@@ -44,4 +44,9 @@ class FuelGaugeKitTests: XCTestCase {
         let expectedRect = fuelGauge.frame
         XCTAssertEqual(bgrect, expectedRect, "Background frame expected to be \(expectedRect) but is \(bgrect)")
     }
+    
+    func testBackgroundImageLoaded() {
+        let bgimage = fuelGauge.backgroundImage.image
+        XCTAssertNotNil(bgimage, "Image not loaded")
+    }
 }
