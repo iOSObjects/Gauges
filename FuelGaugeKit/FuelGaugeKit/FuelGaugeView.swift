@@ -12,6 +12,7 @@ class FuelGaugeView: UIView {
 
     var backgroundImage:UIImageView!
     var needleImage:UIImageView!
+    var shadowView:UIImageView!
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -21,6 +22,9 @@ class FuelGaugeView: UIView {
         }
         if needleImage == nil {
             needleImage = createSubviewWithImageNamed("FuelGaugeNeedle")
+        }
+        if shadowView == nil {
+            shadowView = createSubviewWithImageNamed("FuelGaugeShadow")
         }
     }
     
