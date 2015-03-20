@@ -11,6 +11,7 @@ import UIKit
 class FuelGaugeView: UIView {
 
     var backgroundImage:UIImageView!
+    var needleImage:UIImageView!
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -20,6 +21,9 @@ class FuelGaugeView: UIView {
             backgroundImage.frame = self.bounds
             backgroundImage.image = UIImage(named: "FuelGaugeBG", inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
             addSubview(backgroundImage)
+        }
+        if needleImage == nil {
+            needleImage = UIImageView()
         }
     }
 }
