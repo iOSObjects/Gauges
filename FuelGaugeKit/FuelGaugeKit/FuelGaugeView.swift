@@ -47,4 +47,8 @@ class FuelGaugeView: UIView {
         let newImage = UIImage(named: name, inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
         return newImage
     }
+    
+    func calculateRotationRadiansForFuelLevel(level: Float) -> Float {
+        return 0.0
+    }
 }
