@@ -29,8 +29,8 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(self.fuelGauge, "FuelGaugeView not instantiated")
     }
     
-    func testBackgroundImageLazyCreated() {
-        XCTAssertNotNil(fuelGauge.backgroundImage, "Background image not loaded.")
+    func testBackgroundImageViewCreated() {
+        XCTAssertNotNil(fuelGauge.backgroundImage, "Background image not created.")
     }
     
     func testNumberOfSubviews() {
@@ -48,5 +48,9 @@ class FuelGaugeKitTests: XCTestCase {
     func testBackgroundImageLoaded() {
         let bgimage = fuelGauge.backgroundImage.image
         XCTAssertNotNil(bgimage, "Image not loaded")
+    }
+    
+    func testNeedleImageViewCreated() {
+        XCTAssertNotNil(fuelGauge.needleImage, "Needle image not created.")
     }
 }
