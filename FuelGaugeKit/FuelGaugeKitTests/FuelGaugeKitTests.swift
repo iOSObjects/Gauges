@@ -1,7 +1,4 @@
 //
-//  FuelGaugeKitTests.swift
-//  FuelGaugeKitTests
-//
 //  Created by Ron Lisle on 3/19/15.
 //  Copyright (c) 2015 Ron Lisle. All rights reserved.
 //
@@ -20,16 +17,11 @@ class FuelGaugeKitTests: XCTestCase {
         fuelGauge.layoutSubviews()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testFuelGaugeInstantiated() {
         XCTAssertNotNil(self.fuelGauge, "FuelGaugeView not instantiated")
     }
     
-    func testBackgroundImageViewCreated() {
+    func testBackgroundViewCreated() {
         XCTAssertNotNil(fuelGauge.backgroundView, "Background view not created.")
     }
     
@@ -50,7 +42,7 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(bgimage, "Background image not loaded")
     }
     
-    func testNeedleImageViewCreated() {
+    func testNeedleViewCreated() {
         XCTAssertNotNil(fuelGauge.needleView, "Needle view not created.")
     }
     
@@ -65,7 +57,7 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(needleImage, "Needle image not loaded")
     }
     
-    func testShadowImageViewCreated() {
+    func testShadowViewCreated() {
         XCTAssertNotNil(fuelGauge.shadowView, "Shadow view not created.")
     }
     
