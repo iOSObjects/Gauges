@@ -47,7 +47,7 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testBackgroundImageLoaded() {
         let bgimage = fuelGauge.backgroundImage.image
-        XCTAssertNotNil(bgimage, "Image not loaded")
+        XCTAssertNotNil(bgimage, "Background image not loaded")
     }
     
     func testNeedleImageViewCreated() {
@@ -58,6 +58,11 @@ class FuelGaugeKitTests: XCTestCase {
         let needleRect = fuelGauge.needleImage.frame
         let expectedRect = fuelGauge.frame
         XCTAssertEqual(needleRect, expectedRect, "Needle frame expected to be \(expectedRect) but is \(needleRect)")
+    }
+
+    func testNeedleImageLoaded() {
+        let needleImage = fuelGauge.needleImage.image
+        XCTAssertNotNil(needleImage, "Needle image not loaded")
     }
     
 }

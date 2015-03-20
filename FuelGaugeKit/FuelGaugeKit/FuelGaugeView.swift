@@ -25,6 +25,7 @@ class FuelGaugeView: UIView {
         if needleImage == nil {
             needleImage = UIImageView()
             needleImage.frame = self.bounds
+            needleImage.image = UIImage(named: "FuelGaugeNeedle", inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
             addSubview(needleImage)
         }
     }
