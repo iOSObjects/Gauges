@@ -24,6 +24,7 @@ class FuelGaugeView: UIView {
         }
         if needleImage == nil {
             needleImage = UIImageView()
+            addSubview(needleImage)
         }
     }
 }
