@@ -17,16 +17,18 @@ class FuelGaugeView: UIView {
         super.layoutSubviews()
         
         if backgroundImage == nil {
-            backgroundImage = UIImageView()
-            backgroundImage.frame = self.bounds
-            backgroundImage.image = UIImage(named: "FuelGaugeBG", inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
-            addSubview(backgroundImage)
+            backgroundImage = createSubviewWithImageNamed("FuelGaugeBG")
         }
         if needleImage == nil {
-            needleImage = UIImageView()
-            needleImage.frame = self.bounds
-            needleImage.image = UIImage(named: "FuelGaugeNeedle", inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
-            addSubview(needleImage)
+            needleImage = createSubviewWithImageNamed("FuelGaugeNeedle")
         }
+    }
+    
+    func createSubviewWithImageNamed(name: String) -> UIImageView {
+        let newImageView = UIImageView()
+        newImageView.frame = self.bounds
+        newImageView.image = UIImage(named: name, inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
+        addSubview(newImageView)
+        return newImageView
     }
 }
