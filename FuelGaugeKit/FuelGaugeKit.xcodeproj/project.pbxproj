@@ -10,6 +10,8 @@
 		1338DF701ABAEB2200C39029 /* FuelGaugeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1338DF6F1ABAEB2200C39029 /* FuelGaugeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1338DF761ABAEB2200C39029 /* FuelGaugeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1338DF6A1ABAEB2200C39029 /* FuelGaugeKit.framework */; };
 		1338DF7D1ABAEB2200C39029 /* FuelGaugeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338DF7C1ABAEB2200C39029 /* FuelGaugeKitTests.swift */; };
+		135E25581ABB6017007E6D2A /* FuelGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E25571ABB6017007E6D2A /* FuelGaugeView.swift */; };
+		135E25591ABB6148007E6D2A /* FuelGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E25571ABB6017007E6D2A /* FuelGaugeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 		1338DF751ABAEB2200C39029 /* FuelGaugeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuelGaugeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1338DF7B1ABAEB2200C39029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1338DF7C1ABAEB2200C39029 /* FuelGaugeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelGaugeKitTests.swift; sourceTree = "<group>"; };
+		135E25571ABB6017007E6D2A /* FuelGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelGaugeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				1338DF6F1ABAEB2200C39029 /* FuelGaugeKit.h */,
+				135E25571ABB6017007E6D2A /* FuelGaugeView.swift */,
 				1338DF6D1ABAEB2200C39029 /* Supporting Files */,
 			);
 			path = FuelGaugeKit;
@@ -209,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135E25581ABB6017007E6D2A /* FuelGaugeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135E25591ABB6148007E6D2A /* FuelGaugeView.swift in Sources */,
 				1338DF7D1ABAEB2200C39029 /* FuelGaugeKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +325,7 @@
 		1338DF811ABAEB2200C39029 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +335,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1338DF821ABAEB2200C39029 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -395,6 +404,7 @@
 				1338DF821ABAEB2200C39029 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1338DF831ABAEB2200C39029 /* Build configuration list for PBXNativeTarget "FuelGaugeKitTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +413,7 @@
 				1338DF851ABAEB2200C39029 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
