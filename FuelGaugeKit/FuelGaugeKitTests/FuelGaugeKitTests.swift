@@ -72,4 +72,8 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(shadowImage, "Shadow image not loaded")
     }
     
+    func testFuelLevelInitially0() {
+        let level = fuelGauge.fuelLevel
+        XCTAssertEqual(level, 0.0, "Initial fuel level expected to be 0 but is \(level)")
+    }
 }
