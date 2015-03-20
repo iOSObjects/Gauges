@@ -33,7 +33,12 @@ class FuelGaugeView: UIView {
     func createImageViewWithImageNamed(name: String) -> UIImageView {
         let newImageView = UIImageView()
         newImageView.frame = self.bounds
-        newImageView.image = UIImage(named: name, inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
+        newImageView.image = loadImageNamed(name)
         return newImageView
+    }
+    
+    func loadImageNamed(name: String) -> UIImage? {
+        let newImage = UIImage(named: name, inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
+        return newImage
     }
 }
