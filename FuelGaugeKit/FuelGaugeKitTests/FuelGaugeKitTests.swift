@@ -53,4 +53,11 @@ class FuelGaugeKitTests: XCTestCase {
     func testNeedleImageViewCreated() {
         XCTAssertNotNil(fuelGauge.needleImage, "Needle image not created.")
     }
+    
+    func testNeedleSubviewSizedToBounds() {
+        let needleRect = fuelGauge.needleImage.frame
+        let expectedRect = fuelGauge.frame
+        XCTAssertEqual(needleRect, expectedRect, "Needle frame expected to be \(expectedRect) but is \(needleRect)")
+    }
+    
 }
