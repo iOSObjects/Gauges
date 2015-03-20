@@ -16,6 +16,7 @@ class FuelGaugeKitTests: XCTestCase {
     override func setUp() {
         super.setUp()
         fuelGauge = FuelGaugeView()
+        fuelGauge.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 100)
         fuelGauge.layoutSubviews()
     }
     
@@ -38,4 +39,9 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssert(numberOfSubviews == expectedNumber,"Number of subviews s/b \(expectedNumber) but is \(numberOfSubviews)")
     }
     
+    func testBackgroundSubviewSizedToBounds() {
+        let bgrect = fuelGauge.backgroundImage.frame
+        let expectedRect = fuelGauge.frame
+        XCTAssertEqual(bgrect, expectedRect, "Background frame expected to be \(expectedRect) but is \(bgrect)")
+    }
 }
