@@ -27,6 +27,10 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(self.fuelGauge, "FuelGaugeView not instantiated")
     }
     
+    func testBackgroundImageLoaded() {
+        XCTAssertNotNil(fuelGauge.backgroundImage, "Background image not loaded.")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {
