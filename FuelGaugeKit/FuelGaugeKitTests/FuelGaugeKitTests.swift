@@ -35,7 +35,7 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testNumberOfSubviews() {
         let numberOfSubviews = fuelGauge.subviews.count
-        let expectedNumber = 1
+        let expectedNumber = 2
         XCTAssert(numberOfSubviews == expectedNumber,"Number of subviews s/b \(expectedNumber) but is \(numberOfSubviews)")
     }
     
