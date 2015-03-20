@@ -69,4 +69,15 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(fuelGauge.shadowView, "Shadow view not created.")
     }
     
+    func testShadowSubviewSizedToBounds() {
+        let shadowRect = fuelGauge.shadowView.frame
+        let expectedRect = fuelGauge.frame
+        XCTAssertEqual(shadowRect, expectedRect, "Shadow frame expected to be \(expectedRect) but is \(shadowRect)")
+    }
+    
+    func testShadowImageLoaded() {
+        let shadowImage = fuelGauge.shadowView.image
+        XCTAssertNotNil(shadowImage, "Shadow image not loaded")
+    }
+    
 }
