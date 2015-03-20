@@ -25,10 +25,15 @@ class FuelGaugeView: UIView {
     }
     
     func createSubviewWithImageNamed(name: String) -> UIImageView {
+        let newImageView = createImageViewWithImageNamed(name)
+        addSubview(newImageView)
+        return newImageView
+    }
+    
+    func createImageViewWithImageNamed(name: String) -> UIImageView {
         let newImageView = UIImageView()
         newImageView.frame = self.bounds
         newImageView.image = UIImage(named: name, inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
-        addSubview(newImageView)
         return newImageView
     }
 }
