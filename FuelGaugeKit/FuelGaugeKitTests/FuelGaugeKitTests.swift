@@ -105,9 +105,10 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertEqualWithAccuracy(angle, expectedAngle, 0.0001, "Angle: \(angle) not equal to expected \(expectedAngle)")
     }
     
-    func testCurrentRotationIsInitiallyZero() {
+    func testCurrentRotationIsInitially120degrees() {
         let rotation = fuelGauge.currentRotation
-        XCTAssertEqual(rotation, Float(0.0), "Initial rotation expected to be zero but is \(rotation)")
+        let expectedRotation = calculateRadiansForDegrees(120)
+        XCTAssertEqual(rotation, expectedRotation, "Initial rotation expected to be \(expectedRotation) but is \(rotation)")
     }
     
     //MARK: Helper methods
