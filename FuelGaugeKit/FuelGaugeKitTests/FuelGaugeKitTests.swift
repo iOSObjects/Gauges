@@ -30,7 +30,7 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testBackgroundImageViewCreated() {
-        XCTAssertNotNil(fuelGauge.backgroundImage, "Background image not created.")
+        XCTAssertNotNil(fuelGauge.backgroundImage, "Background view not created.")
     }
     
     func testNumberOfSubviews() {
@@ -51,7 +51,7 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testNeedleImageViewCreated() {
-        XCTAssertNotNil(fuelGauge.needleImage, "Needle image not created.")
+        XCTAssertNotNil(fuelGauge.needleImage, "Needle view not created.")
     }
     
     func testNeedleSubviewSizedToBounds() {
@@ -63,6 +63,10 @@ class FuelGaugeKitTests: XCTestCase {
     func testNeedleImageLoaded() {
         let needleImage = fuelGauge.needleImage.image
         XCTAssertNotNil(needleImage, "Needle image not loaded")
+    }
+    
+    func testShadowImageViewCreated() {
+        XCTAssertNotNil(fuelGauge.shadowView, "Shadow view not created.")
     }
     
 }
