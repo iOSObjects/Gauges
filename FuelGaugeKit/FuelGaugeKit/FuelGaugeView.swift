@@ -17,6 +17,7 @@ class FuelGaugeView: UIView {
         
         if backgroundImage == nil {
             backgroundImage = UIImageView()
+            addSubview(backgroundImage)
         }
     }
 }
