@@ -98,6 +98,13 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertEqualWithAccuracy(angle, expectedAngle, 0.0001, "Angle: \(angle) not equal to expected \(expectedAngle)")
     }
     
+    func testCalculateRotationRadiansForFuelLevelForOddAngle() {
+        let level: Float = 0.4567
+        let expectedAngle = calculateRadiansForDegrees(-10.39)
+        let angle = fuelGauge.calculateRotationRadiansForFuelLevel(level)
+        XCTAssertEqualWithAccuracy(angle, expectedAngle, 0.0001, "Angle: \(angle) not equal to expected \(expectedAngle)")
+    }
+    
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
         let radians = degrees / 180.0 * Float(M_PI)
