@@ -10,12 +10,13 @@ import UIKit
 
 class FuelGaugeView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var backgroundImage:UIImageView!
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if backgroundImage == nil {
+            backgroundImage = UIImageView()
+        }
+    }
 }

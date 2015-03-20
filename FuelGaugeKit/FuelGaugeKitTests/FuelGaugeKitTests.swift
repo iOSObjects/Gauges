@@ -16,6 +16,7 @@ class FuelGaugeKitTests: XCTestCase {
     override func setUp() {
         super.setUp()
         fuelGauge = FuelGaugeView()
+        fuelGauge.layoutSubviews()
     }
     
     override func tearDown() {
@@ -29,13 +30,6 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testBackgroundImageLoaded() {
         XCTAssertNotNil(fuelGauge.backgroundImage, "Background image not loaded.")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }
