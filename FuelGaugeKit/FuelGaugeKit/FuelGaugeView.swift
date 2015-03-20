@@ -49,6 +49,7 @@ class FuelGaugeView: UIView {
     }
     
     func calculateRotationRadiansForFuelLevel(level: Float) -> Float {
-        return 0.0
+        let fullRotation = Float(M_PI * 4 / 3)
+        return (fullRotation * level) - (fullRotation / 2)
     }
 }
