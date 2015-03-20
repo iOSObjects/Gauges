@@ -12,6 +12,8 @@
 		1338DF7D1ABAEB2200C39029 /* FuelGaugeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1338DF7C1ABAEB2200C39029 /* FuelGaugeKitTests.swift */; };
 		135E25581ABB6017007E6D2A /* FuelGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E25571ABB6017007E6D2A /* FuelGaugeView.swift */; };
 		135E25591ABB6148007E6D2A /* FuelGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E25571ABB6017007E6D2A /* FuelGaugeView.swift */; };
+		135E255B1ABC5A99007E6D2A /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135E255A1ABC5A99007E6D2A /* images.xcassets */; };
+		135E255C1ABC5B68007E6D2A /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135E255A1ABC5A99007E6D2A /* images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 		1338DF7B1ABAEB2200C39029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1338DF7C1ABAEB2200C39029 /* FuelGaugeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelGaugeKitTests.swift; sourceTree = "<group>"; };
 		135E25571ABB6017007E6D2A /* FuelGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelGaugeView.swift; sourceTree = "<group>"; };
+		135E255A1ABC5A99007E6D2A /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 				1338DF6F1ABAEB2200C39029 /* FuelGaugeKit.h */,
 				135E25571ABB6017007E6D2A /* FuelGaugeView.swift */,
 				1338DF6D1ABAEB2200C39029 /* Supporting Files */,
+				135E255A1ABC5A99007E6D2A /* images.xcassets */,
 			);
 			path = FuelGaugeKit;
 			sourceTree = "<group>";
@@ -196,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135E255B1ABC5A99007E6D2A /* images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135E255C1ABC5B68007E6D2A /* images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

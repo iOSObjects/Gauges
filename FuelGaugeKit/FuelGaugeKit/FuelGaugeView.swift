@@ -18,6 +18,7 @@ class FuelGaugeView: UIView {
         if backgroundImage == nil {
             backgroundImage = UIImageView()
             backgroundImage.frame = self.bounds
+            backgroundImage.image = UIImage(named: "FuelGaugeBG", inBundle: NSBundle(forClass: FuelGaugeView.self), compatibleWithTraitCollection: nil)
             addSubview(backgroundImage)
         }
     }
