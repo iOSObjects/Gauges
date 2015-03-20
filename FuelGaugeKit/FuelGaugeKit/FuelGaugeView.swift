@@ -10,18 +10,18 @@ import UIKit
 
 class FuelGaugeView: UIView {
 
-    var backgroundImage:UIImageView!
-    var needleImage:UIImageView!
+    var backgroundView:UIImageView!
+    var needleView:UIImageView!
     var shadowView:UIImageView!
 
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if backgroundImage == nil {
-            backgroundImage = createSubviewWithImageNamed("FuelGaugeBG")
+        if backgroundView == nil {
+            backgroundView = createSubviewWithImageNamed("FuelGaugeBG")
         }
-        if needleImage == nil {
-            needleImage = createSubviewWithImageNamed("FuelGaugeNeedle")
+        if needleView == nil {
+            needleView = createSubviewWithImageNamed("FuelGaugeNeedle")
         }
         if shadowView == nil {
             shadowView = createSubviewWithImageNamed("FuelGaugeShadow")

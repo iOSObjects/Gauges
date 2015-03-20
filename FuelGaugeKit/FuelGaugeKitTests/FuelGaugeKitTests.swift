@@ -30,7 +30,7 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testBackgroundImageViewCreated() {
-        XCTAssertNotNil(fuelGauge.backgroundImage, "Background view not created.")
+        XCTAssertNotNil(fuelGauge.backgroundView, "Background view not created.")
     }
     
     func testNumberOfSubviews() {
@@ -40,28 +40,28 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testBackgroundSubviewSizedToBounds() {
-        let bgrect = fuelGauge.backgroundImage.frame
+        let bgrect = fuelGauge.backgroundView.frame
         let expectedRect = fuelGauge.frame
         XCTAssertEqual(bgrect, expectedRect, "Background frame expected to be \(expectedRect) but is \(bgrect)")
     }
     
     func testBackgroundImageLoaded() {
-        let bgimage = fuelGauge.backgroundImage.image
+        let bgimage = fuelGauge.backgroundView.image
         XCTAssertNotNil(bgimage, "Background image not loaded")
     }
     
     func testNeedleImageViewCreated() {
-        XCTAssertNotNil(fuelGauge.needleImage, "Needle view not created.")
+        XCTAssertNotNil(fuelGauge.needleView, "Needle view not created.")
     }
     
     func testNeedleSubviewSizedToBounds() {
-        let needleRect = fuelGauge.needleImage.frame
+        let needleRect = fuelGauge.needleView.frame
         let expectedRect = fuelGauge.frame
         XCTAssertEqual(needleRect, expectedRect, "Needle frame expected to be \(expectedRect) but is \(needleRect)")
     }
 
     func testNeedleImageLoaded() {
-        let needleImage = fuelGauge.needleImage.image
+        let needleImage = fuelGauge.needleView.image
         XCTAssertNotNil(needleImage, "Needle image not loaded")
     }
     
