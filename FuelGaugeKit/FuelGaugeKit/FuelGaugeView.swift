@@ -24,6 +24,8 @@ class FuelGaugeView: UIView {
         }
         if needleView == nil {
             needleView = createSubviewWithImageNamed("FuelGaugeNeedle")
+            let angleForEmpty = calculateRotationRadiansForFuelLevel(0.0)
+            rotateView(needleView, angle: angleForEmpty)
         }
         if shadowView == nil {
             shadowView = createSubviewWithImageNamed("FuelGaugeShadow")
@@ -51,5 +53,9 @@ class FuelGaugeView: UIView {
     func calculateRotationRadiansForFuelLevel(level: Float) -> Float {
         let fullRotation = Float(M_PI * 4 / 3)
         return (fullRotation * level) - (fullRotation / 2)
+    }
+    
+    func rotateView(view: UIView, angle: Float) {
+        view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle))
     }
 }
