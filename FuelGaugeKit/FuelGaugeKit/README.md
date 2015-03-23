@@ -1,6 +1,11 @@
 # Gauges
 Automotive gauge style iOS custom UI controls
 
+Status: 
+* FuelGauge: partially constructed
+* Speedometer: not started yet
+* Tachometer: not started yet
+
 I have been working on creating an iOS application to calculate
 the fuel level of my motorcycle. I want to display an indication
 of the current fuel level using a control that looks similar to
@@ -8,12 +13,15 @@ the analog circular speedometer on my motorcycle.
 I was surprised that I wasn't able to locate
 any open source iOS controls to do this. 
 So I'm creating one. 
+
 Since the difference is small in how other similar gauges 
 would be created, I'm going to create those also 
 (speedometer, tachometer, etc).
 The fuel gauge will be first, since that is my personal
 immediate need. But I'll be quickly following up with additional
 gauges as shown below.
+
+All code is being done using TDD.
 
 
 ## FuelGauge
