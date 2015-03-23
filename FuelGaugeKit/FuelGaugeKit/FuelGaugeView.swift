@@ -69,5 +69,6 @@ class FuelGaugeView: UIView {
         let previousRotation = calculateRotationRadiansForFuelLevel(oldValue)
         let newRotation = calculateRotationRadiansForFuelLevel(fuelLevel)
         rotateView(needleView, angle: newRotation - previousRotation)
+        rotateView(shadowView, angle: newRotation - previousRotation)
     }
 }
