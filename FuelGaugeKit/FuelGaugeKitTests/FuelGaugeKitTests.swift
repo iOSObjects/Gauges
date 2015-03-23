@@ -66,8 +66,11 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testShadowSubviewSizedToBounds() {
         let shadowRect = fuelGauge.shadowView.frame
-        let expectedRect = fuelGauge.frame
-        XCTAssertEqual(shadowRect, expectedRect, "Shadow frame expected to be \(expectedRect) but is \(shadowRect)")
+        let expectedRect = CGRectMake(-18.3013, -18.3013, 136.6025, 136.6025)
+        XCTAssertEqualWithAccuracy(shadowRect.origin.x, expectedRect.origin.x, 0.0001, "Shadow frame x expected to be \(expectedRect.origin.x) but is \(shadowRect.origin.x)")
+        XCTAssertEqualWithAccuracy(shadowRect.origin.y, expectedRect.origin.y, 0.0001, "Shadow frame y expected to be \(expectedRect.origin.y) but is \(shadowRect.origin.y)")
+        XCTAssertEqualWithAccuracy(shadowRect.width, expectedRect.width, 0.0001, "Shadow frame width expected to be \(expectedRect.width) but is \(shadowRect.width)")
+        XCTAssertEqualWithAccuracy(shadowRect.height, expectedRect.width, 0.0001, "Shadow frame width expected to be \(expectedRect.height) but is \(shadowRect.height)")
     }
     
     func testShadowImageLoaded() {
@@ -110,6 +113,22 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testNeedleRotatedMinus120Initially() {
         let view = fuelGauge.needleView
+        let a = view.transform.a
+        let b = view.transform.b
+        let c = view.transform.c
+        let d = view.transform.d
+        let tx = view.transform.tx
+        let ty = view.transform.ty
+        XCTAssertEqualWithAccuracy(a, CGFloat(-0.5), 0.0001, "Transform.a expected to be -0.5 but was \(a)")
+        XCTAssertEqualWithAccuracy(b, CGFloat(-0.8660), 0.0001, "Transform.b expected to be -0.8860 but was \(b)")
+        XCTAssertEqualWithAccuracy(c, CGFloat(0.8660), 0.0001, "Transform.c expected to be 0.8660 but was \(c)")
+        XCTAssertEqualWithAccuracy(d, CGFloat(-0.5), 0.0001, "Transform.d expected to be -0.5 but was \(d)")
+        XCTAssertEqualWithAccuracy(tx, CGFloat(0.0), 0.0001, "Transform.tx expected to be 0.0 but was \(tx)")
+        XCTAssertEqualWithAccuracy(ty, CGFloat(0.0), 0.0001, "Transform.ty expected to be 0.0 but was \(ty)")
+    }
+    
+    func testShadowRotatedMinus120Initially() {
+        let view = fuelGauge.shadowView
         let a = view.transform.a
         let b = view.transform.b
         let c = view.transform.c

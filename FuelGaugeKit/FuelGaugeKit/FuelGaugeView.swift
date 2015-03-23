@@ -29,6 +29,8 @@ class FuelGaugeView: UIView {
         }
         if shadowView == nil {
             shadowView = createSubviewWithImageNamed("FuelGaugeShadow")
+            let angleForEmpty = calculateRotationRadiansForFuelLevel(0.0)
+            rotateView(shadowView, angle: angleForEmpty)
         }
     }
     
