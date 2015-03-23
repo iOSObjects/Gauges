@@ -37,8 +37,8 @@
 		1338DF7C1ABAEB2200C39029 /* FuelGaugeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelGaugeKitTests.swift; sourceTree = "<group>"; };
 		135E25571ABB6017007E6D2A /* FuelGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelGaugeView.swift; sourceTree = "<group>"; };
 		135E255A1ABC5A99007E6D2A /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
-		135E255D1ABC62EA007E6D2A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		135E255E1ABC62EA007E6D2A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		135E255D1ABC62EA007E6D2A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
+		135E255E1ABC62EA007E6D2A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
