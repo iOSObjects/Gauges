@@ -113,39 +113,27 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testNeedleRotatedMinus120Initially() {
         let view = fuelGauge.needleView
-        let a = view.transform.a
-        let b = view.transform.b
-        let c = view.transform.c
-        let d = view.transform.d
-        let tx = view.transform.tx
-        let ty = view.transform.ty
-        XCTAssertEqualWithAccuracy(a, CGFloat(-0.5), 0.0001, "Transform.a expected to be -0.5 but was \(a)")
-        XCTAssertEqualWithAccuracy(b, CGFloat(-0.8660), 0.0001, "Transform.b expected to be -0.8860 but was \(b)")
-        XCTAssertEqualWithAccuracy(c, CGFloat(0.8660), 0.0001, "Transform.c expected to be 0.8660 but was \(c)")
-        XCTAssertEqualWithAccuracy(d, CGFloat(-0.5), 0.0001, "Transform.d expected to be -0.5 but was \(d)")
-        XCTAssertEqualWithAccuracy(tx, CGFloat(0.0), 0.0001, "Transform.tx expected to be 0.0 but was \(tx)")
-        XCTAssertEqualWithAccuracy(ty, CGFloat(0.0), 0.0001, "Transform.ty expected to be 0.0 but was \(ty)")
+        let rotation = rotationOfView(view)
+        let expectedRotation = calculateRadiansForDegrees(-120.0)
+        XCTAssertEqualWithAccuracy(rotation, expectedRotation, 0.0001, "Rotation expected to be \(expectedRotation) but was \(rotation)")
     }
     
     func testShadowRotatedMinus120Initially() {
         let view = fuelGauge.shadowView
-        let a = view.transform.a
-        let b = view.transform.b
-        let c = view.transform.c
-        let d = view.transform.d
-        let tx = view.transform.tx
-        let ty = view.transform.ty
-        XCTAssertEqualWithAccuracy(a, CGFloat(-0.5), 0.0001, "Transform.a expected to be -0.5 but was \(a)")
-        XCTAssertEqualWithAccuracy(b, CGFloat(-0.8660), 0.0001, "Transform.b expected to be -0.8860 but was \(b)")
-        XCTAssertEqualWithAccuracy(c, CGFloat(0.8660), 0.0001, "Transform.c expected to be 0.8660 but was \(c)")
-        XCTAssertEqualWithAccuracy(d, CGFloat(-0.5), 0.0001, "Transform.d expected to be -0.5 but was \(d)")
-        XCTAssertEqualWithAccuracy(tx, CGFloat(0.0), 0.0001, "Transform.tx expected to be 0.0 but was \(tx)")
-        XCTAssertEqualWithAccuracy(ty, CGFloat(0.0), 0.0001, "Transform.ty expected to be 0.0 but was \(ty)")
+        let rotation = rotationOfView(view)
+        let expectedRotation = calculateRadiansForDegrees(-120.0)
+    XCTAssertEqualWithAccuracy(rotation, expectedRotation, 0.0001, "Rotation expected to be \(expectedRotation) but was \(rotation)")
     }
     
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
         let radians = degrees / 180.0 * Float(M_PI)
         return radians
+    }
+    
+    func rotationOfView(view: UIView) -> Float {
+        let transform = view.transform
+        let rotation = atan2f(Float(transform.b), Float(transform.a))
+        return rotation
     }
 }
