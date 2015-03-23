@@ -125,6 +125,16 @@ class FuelGaugeKitTests: XCTestCase {
     XCTAssertEqualWithAccuracy(rotation, expectedRotation, 0.0001, "Rotation expected to be \(expectedRotation) but was \(rotation)")
     }
     
+    func testSettingFuelToHalfRotatesNeedleToHalf() {
+        
+        fuelGauge.fuelLevel = 0.5
+        
+        let view = fuelGauge.needleView
+        let rotation = rotationOfView(view)
+        let expectedRotation = calculateRadiansForDegrees(0.0)
+        XCTAssertEqualWithAccuracy(rotation, expectedRotation, 0.0001, "Rotation expected to be \(expectedRotation) but was \(rotation)")
+    }
+    
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
         let radians = degrees / 180.0 * Float(M_PI)
