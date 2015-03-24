@@ -27,15 +27,18 @@ class FuelGaugeView: UIView {
             backgroundView = createSubviewWithImageNamed("FuelGaugeBG")
         }
         if needleView == nil {
-            needleView = createSubviewWithImageNamed("FuelGaugeNeedle")
-            let angleForEmpty = calculateRotationRadiansForFuelLevel(0.0)
-            rotateView(needleView, angle: angleForEmpty)
+            needleView = createAndRotateSubviewWithImageNamed("FuelGaugeNeedle")
         }
         if shadowView == nil {
-            shadowView = createSubviewWithImageNamed("FuelGaugeShadow")
-            let angleForEmpty = calculateRotationRadiansForFuelLevel(0.0)
-            rotateView(shadowView, angle: angleForEmpty)
+            shadowView = createAndRotateSubviewWithImageNamed("FuelGaugeShadow")
         }
+    }
+    
+    func createAndRotateSubviewWithImageNamed(name: String) -> UIImageView {
+        let newView = createSubviewWithImageNamed(name)
+        let angleForEmpty = calculateRotationRadiansForFuelLevel(0.0)
+        rotateView(newView, angle: angleForEmpty)
+        return newView
     }
     
     func createSubviewWithImageNamed(name: String) -> UIImageView {
