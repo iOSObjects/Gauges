@@ -25,6 +25,11 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertNotNil(fuelGauge.backgroundView, "Background view not created.")
     }
     
+    func testBackgroundViewContentModeSetToFitAspect() {
+        let contentMode = fuelGauge.backgroundView.contentMode
+        XCTAssert(contentMode == UIViewContentMode.ScaleAspectFit, "Content mode s/b aspect fit, but is \(contentMode)")
+    }
+    
     func testNumberOfSubviews() {
         let numberOfSubviews = fuelGauge.subviews.count
         let expectedNumber = 3
