@@ -50,6 +50,7 @@ class FuelGaugeView: UIView {
     func createImageViewWithImageNamed(name: String) -> UIImageView {
         let newImageView = UIImageView()
         newImageView.frame = self.bounds
+        newImageView.contentMode = UIViewContentMode.ScaleAspectFit
         newImageView.image = loadImageNamed(name)
         return newImageView
     }
