@@ -150,6 +150,11 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertEqualWithAccuracy(rotation, expectedRotation, 0.0001, "Rotation expected to be \(expectedRotation) but was \(rotation)")
     }
     
+    func testAnimationDurationPropertyDefaultsToZero() {
+        let duration = fuelGauge.animationDuration
+        XCTAssertEqual(duration, 0.0, "Duration s/b 0.0 but is \(duration)")
+    }
+    
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
         let radians = degrees / 180.0 * Float(M_PI)
