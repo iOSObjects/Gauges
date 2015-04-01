@@ -16,6 +16,8 @@ class FuelGaugeView: UIView {
         }
     }
     
+    var animationDuration: Float = 0.0
+    
     var backgroundView:UIImageView!
     var needleView:UIImageView!
     var shadowView:UIImageView!
