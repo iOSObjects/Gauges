@@ -6,13 +6,33 @@
 import UIKit
 import XCTest
 
+class SpyFuelGaugeView: FuelGaugeView {
+    var rotateViewWasCalled: Bool = false
+    var rotateViewWithDurationWasCalled: Bool = false
+    var rotateViewAngle: Float = 0.0
+    var rotateViewDuration: Float = 0.0
+    
+    override func rotateView(view: UIView, angle: Float) {
+        rotateViewWasCalled = true
+        rotateViewAngle = angle
+        super.rotateView(view, angle: angle)
+    }
+    
+    override func rotateViewWithDuration(view: UIView, angle: Float, duration: Float) {
+        rotateViewWithDurationWasCalled = true
+        rotateViewAngle = angle
+        rotateViewDuration = duration
+        super.rotateViewWithDuration(view, angle: angle, duration: duration)
+    }
+}
+
 class FuelGaugeKitTests: XCTestCase {
     
     var fuelGauge: FuelGaugeView!
     
     override func setUp() {
         super.setUp()
-        fuelGauge = FuelGaugeView()
+        fuelGauge = SpyFuelGaugeView()
         fuelGauge.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 100)
         fuelGauge.layoutSubviews()
     }
@@ -154,6 +174,7 @@ class FuelGaugeKitTests: XCTestCase {
         let duration = fuelGauge.animationDuration
         XCTAssertEqual(duration, 0.0, "Duration s/b 0.0 but is \(duration)")
     }
+    
     
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {

@@ -71,10 +71,16 @@ class FuelGaugeView: UIView {
         view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle))
     }
     
+    func rotateViewWithDuration(view: UIView, angle: Float, duration: Float) {
+        
+        rotateView(view, angle: angle)
+        
+    }
+    
     func updateGauge(oldValue: Float) {
         let previousRotation = calculateRotationRadiansForFuelLevel(oldValue)
         let newRotation = calculateRotationRadiansForFuelLevel(fuelLevel)
-        rotateView(needleView, angle: newRotation - previousRotation)
-        rotateView(shadowView, angle: newRotation - previousRotation)
+        rotateViewWithDuration(needleView, angle: newRotation - previousRotation, duration: self.animationDuration)
+        rotateViewWithDuration(shadowView, angle: newRotation - previousRotation, duration: self.animationDuration)
     }
 }
