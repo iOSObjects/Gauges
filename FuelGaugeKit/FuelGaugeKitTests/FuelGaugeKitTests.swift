@@ -11,6 +11,8 @@ class SpyFuelGaugeView: FuelGaugeView {
     var rotateViewWithDurationWasCalled: Bool = false
     var rotateViewAngle: Float = 0.0
     var rotateViewDuration: Float = 0.0
+    var rotateViewDamping: Float = 0.0
+    var rotateViewVelocity: Float = 0.0
     
     override func rotateView(view: UIView, angle: Float) {
         rotateViewWasCalled = true
@@ -18,11 +20,13 @@ class SpyFuelGaugeView: FuelGaugeView {
         super.rotateView(view, angle: angle)
     }
     
-    override func rotateViewWithDuration(view: UIView, angle: Float, duration: Float) {
+    override func rotateViewWithDuration(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
         rotateViewWithDurationWasCalled = true
         rotateViewAngle = angle
         rotateViewDuration = duration
-        super.rotateViewWithDuration(view, angle: angle, duration: duration)
+        rotateViewDamping = damping
+        rotateViewVelocity = velocity
+        super.rotateViewWithDuration(view, angle: angle, duration: duration, damping: damping, velocity: velocity)
     }
 }
 
@@ -175,6 +179,9 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertEqual(duration, 0.0, "Duration s/b 0.0 but is \(duration)")
     }
     
+    func testSettingFuelLevelCallsRotateView() {
+        
+    }
     
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
