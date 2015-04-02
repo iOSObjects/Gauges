@@ -17,6 +17,7 @@ class FuelGaugeView: UIView {
     }
     
     var animationDuration: Float = 0.0
+    var animationDamping: Float = 0.4
     
     var backgroundView:UIImageView!
     var needleView:UIImageView!
@@ -66,6 +67,12 @@ class FuelGaugeView: UIView {
         let fullRotation = Float(M_PI * 4 / 3)
         return (fullRotation * level) - (fullRotation / 2)
     }
+
+    func rotateNeedleAndShadow(angle: Float) {
+        rotateViewWithDuration(needleView, angle: angle, duration: self.animationDuration, damping: animationDamping, velocity: 0)
+        rotateViewWithDuration(shadowView, angle: angle, duration: self.animationDuration, damping: animationDamping, velocity: 0)
+        
+    }
     
     func rotateView(view: UIView, angle: Float) {
         view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle))
@@ -83,9 +90,13 @@ class FuelGaugeView: UIView {
     }
     
     func updateGauge(oldValue: Float) {
+        let deltaAngle = calculateDeltaAngleForFuelLevel(fuelLevel, oldValue: oldValue)
+        rotateNeedleAndShadow(deltaAngle)
+    }
+    
+    func calculateDeltaAngleForFuelLevel(value: Float, oldValue: Float) -> Float {
         let previousRotation = calculateRotationRadiansForFuelLevel(oldValue)
         let newRotation = calculateRotationRadiansForFuelLevel(fuelLevel)
-        rotateViewWithDuration(needleView, angle: newRotation - previousRotation, duration: self.animationDuration, damping: 0.4, velocity: 0)
-        rotateViewWithDuration(shadowView, angle: newRotation - previousRotation, duration: self.animationDuration, damping: 0.4, velocity: 0)
+        return newRotation - previousRotation
     }
 }
