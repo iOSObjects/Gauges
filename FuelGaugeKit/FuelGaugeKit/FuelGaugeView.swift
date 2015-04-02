@@ -8,22 +8,23 @@
 
 import UIKit
 
+@IBDesignable public
 class FuelGaugeView: UIView {
 
-    var fuelLevel: Float = 0.0 {
+    @IBInspectable public var fuelLevel: Float = 0.0 {
         didSet {
             updateGauge(oldValue)
         }
     }
     
-    var animationDuration: Float = 0.0
-    var animationDamping: Float = 0.4
+    @IBInspectable public var animationDuration: Float = 0.0
+    @IBInspectable public var animationDamping: Float = 0.4
     
     var backgroundView:UIImageView!
     var needleView:UIImageView!
     var shadowView:UIImageView!
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         if backgroundView == nil {
