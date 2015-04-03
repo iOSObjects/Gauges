@@ -8,6 +8,7 @@ import XCTest
 
 class SpyFuelGaugeView: FuelGaugeView {
     var rotateViewWasCalled: Bool = false
+    var rotateViewIn2PartsWasCalled: Bool = false
     var rotateViewAngle: Float = 0.0
     var rotateViewDuration: Float = 0.0
     var rotateViewDamping: Float = 0.0
@@ -21,6 +22,12 @@ class SpyFuelGaugeView: FuelGaugeView {
         rotateViewVelocity = velocity
         super.rotateView(view, angle: angle, duration: duration, damping: damping, velocity: velocity)
     }
+
+    override func rotateViewIn2Parts(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
+        rotateViewIn2PartsWasCalled = true
+        super.rotateViewIn2Parts(view, angle: angle, duration: duration, damping: damping, velocity: velocity)
+    }
+    
 }
 
 class FuelGaugeKitTests: XCTestCase {
@@ -186,9 +193,31 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertTrue(fuelGauge.rotateViewWasCalled, "Should be called as a result of setting fuel level")
     }
     
+    func testThat2PartAnimationDoneIfAngleGreaterThan180Degrees() {
+        //We don't want the needle to animate across the bottom of the gauge
+        fuelGauge.duration = 1.0
+        fuelGauge.level = 1.0
+        XCTAssertTrue(fuelGauge.rotateViewIn2PartsWasCalled, "Should be called as a result of setting fuel level with angle > 180")
+    }
+    
+    func testAngleInRadiansIsEqualToOrGreaterThan180DegreesTrueFor180() {
+        let angle = convertDegreesToRadians(180)
+        XCTAssertTrue(fuelGauge.angleInRadiansIsEqualToOrGreaterThan180Degrees(angle), "Angle is equal to 180, but reported false")
+    }
+    
+    func testAngleInRadiansIsEqualToOrGreaterThan180DegreesFalseFor90() {
+        let angle = convertDegreesToRadians(97)
+        XCTAssertFalse(fuelGauge.angleInRadiansIsEqualToOrGreaterThan180Degrees(angle), "Angle (97) is less than 180, but reported true")
+    }
+    
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
         let radians = degrees / 180.0 * Float(M_PI)
+        return radians
+    }
+
+    func convertDegreesToRadians(degrees: Float) -> Float {
+        let radians = Float(M_PI / 180) * degrees
         return radians
     }
     

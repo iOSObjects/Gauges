@@ -15,7 +15,6 @@
 		135E255B1ABC5A99007E6D2A /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135E255A1ABC5A99007E6D2A /* images.xcassets */; };
 		135E255C1ABC5B68007E6D2A /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 135E255A1ABC5A99007E6D2A /* images.xcassets */; };
 		135E255F1ABC62EA007E6D2A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 135E255D1ABC62EA007E6D2A /* LICENSE */; };
-		135E25601ABC62EA007E6D2A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 135E255E1ABC62EA007E6D2A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				135E25601ABC62EA007E6D2A /* README.md in Sources */,
 				135E25581ABB6017007E6D2A /* FuelGaugeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

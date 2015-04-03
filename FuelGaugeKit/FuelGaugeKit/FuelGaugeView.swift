@@ -70,15 +70,45 @@ class FuelGaugeView: UIView {
     }
 
     func rotateNeedleAndShadow(angle: Float) {
-        rotateView(needleView, angle: angle, duration:duration, damping: damping, velocity: 0)
-        rotateView(shadowView, angle: angle, duration: duration, damping: damping, velocity: 0)
+        if angleInRadiansIsEqualToOrGreaterThan180Degrees(angle) {
+
+            rotateViewIn2Parts(needleView, angle: angle, duration:duration, damping: damping, velocity: 0)
+            rotateViewIn2Parts(shadowView, angle: angle, duration: duration, damping: damping, velocity: 0)
+            
+        }else{
+            
+            rotateView(needleView, angle: angle, duration:duration, damping: damping, velocity: 0)
+            rotateView(shadowView, angle: angle, duration: duration, damping: damping, velocity: 0)
+            
+        }
     }
     
     func rotateView(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
         
-            UIView.animateWithDuration(NSTimeInterval(duration), delay: 0, usingSpringWithDamping: CGFloat(damping), initialSpringVelocity: CGFloat(velocity), options: nil, animations: {
+        UIView.animateWithDuration(NSTimeInterval(duration), delay: 0, usingSpringWithDamping: CGFloat(damping), initialSpringVelocity: CGFloat(velocity), options: nil, animations: {
                 view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle))
             }, completion: nil )
+    }
+    
+    func rotateViewIn2Parts(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
+        
+        let secondVelocity = (angle / 2.0) / Float(duration*0.2)
+        
+        UIView.animateWithDuration(NSTimeInterval(duration*0.2), delay: NSTimeInterval(0), options: UIViewAnimationOptions.CurveLinear, animations: {
+            
+            view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle/2))
+            
+            }, completion: { _ in
+                
+                UIView.animateWithDuration(NSTimeInterval(duration*0.8), delay: NSTimeInterval(0.0), usingSpringWithDamping: CGFloat(damping), initialSpringVelocity: CGFloat(secondVelocity), options: nil, animations: {
+                    
+                    view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle/2))
+                    return
+                    
+                    }, completion: nil)
+                return
+        })
+        
     }
     
     func updateGauge(oldValue: Float) {
@@ -91,4 +121,10 @@ class FuelGaugeView: UIView {
         let newRotation = calculateRotationRadiansForFuelLevel(level)
         return newRotation - previousRotation
     }
+    
+    func angleInRadiansIsEqualToOrGreaterThan180Degrees(angle: Float) -> Bool {
+        let isGreaterThan180degrees: Bool = angle >= Float(M_PI) || angle <= Float(-M_PI)
+        return isGreaterThan180degrees
+    }
+    
 }
