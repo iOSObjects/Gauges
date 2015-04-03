@@ -35,9 +35,9 @@ When animationDuration is set to non-zero, the needle movement will be spring an
 
 ### Properties
 
-* fuelLevel: Float (0.0 to 1.0)
-* animationDuration: Float specifies time used to animate needle movements. 0.0 results in no animation. 1.0 is a good value.
-* animationDamping: Float is the spring damping for the animation. Small values result in lots of bounce. 1.0 results in no bounce.
+* level: (Float 0.0 to 1.0)
+* duration: (Float 0 to +infinity) specifies the length of time that it takes to animate needle movements to a new setting. 0.0 results in no animation. 1.0 is a good value and means that the needle takes about 1 second to move from its current to a new position.
+* damping: (Float 0 to 1) is the spring damping for the animation. Small values result in lots of bounce. 1.0 results in no bounce.
 
 
 ## Speedometer
@@ -55,4 +55,5 @@ A tachometer gauge is in the works.
 1. Add FuelGaugeKit framework to the target dependencies build phase setting for your app target. Restart Xcode if the FuelGaugeFramework does not appear in the list after clicking '+'
 1. Add FuelGaugeKit framework to embedded binaries in app's general build settings.
 1. If using a storyboard, drag a UIView onto it. Then in the identity Inspector, change the UIView's class to FuelGaugeView, and module to FuelGaugeKit. (Restart Xcode if these options are not listed).
+At this point, the gauge should be visible in the storyboard, and the properties displayed in the attribute inspector when the FuelGaugeView is selected. If not, try restarting Xcode, and make sure that the FuelGaugeKit project isn't open in another window.
 

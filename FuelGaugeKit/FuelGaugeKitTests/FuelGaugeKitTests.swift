@@ -110,7 +110,7 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testFuelLevelInitially0() {
-        let level = fuelGauge.fuelLevel
+        let level = fuelGauge.level
         XCTAssertEqual(level, Float(0.0), "Initial fuel level expected to be 0 but is \(level)")
     }
     
@@ -158,7 +158,7 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testSettingFuelToHalfRotatesNeedleToHalf() {
         
-        fuelGauge.fuelLevel = 0.5
+        fuelGauge.level = 0.5
         
         let view = fuelGauge.needleView
         let rotation = rotationOfView(view)
@@ -168,7 +168,7 @@ class FuelGaugeKitTests: XCTestCase {
     
     func testSettingFuelToHalfRotatesShadowToHalf() {
         
-        fuelGauge.fuelLevel = 0.5
+        fuelGauge.level = 0.5
         
         let view = fuelGauge.shadowView
         let rotation = rotationOfView(view)
@@ -177,20 +177,20 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testAnimationDurationPropertyDefaultsToZero() {
-        let duration = fuelGauge.animationDuration
+        let duration = fuelGauge.duration
         XCTAssertEqual(duration, 0.0, "Duration s/b 0.0 but is \(duration)")
     }
     
     func testSettingFuelLevelCallsRotateView() {
         XCTAssertFalse(fuelGauge.rotateViewWasCalled, "Should not be called before test starts")
-        fuelGauge.fuelLevel = 0.123
+        fuelGauge.level = 0.123
         XCTAssertTrue(fuelGauge.rotateViewWasCalled, "Should be called as a result of setting fuel level")
     }
     
     func testSettingFuelLevelWithDurationCallsRotateViewwithDuration() {
         XCTAssertFalse(fuelGauge.rotateViewWithDurationWasCalled, "Should not be called before test starts")
-        fuelGauge.animationDuration = 1.0
-        fuelGauge.fuelLevel = 0.234
+        fuelGauge.duration = 1.0
+        fuelGauge.level = 0.234
         XCTAssertTrue(fuelGauge.rotateViewWithDurationWasCalled, "Should be called as a result of setting fuel level")
     }
     

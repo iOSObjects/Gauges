@@ -11,14 +11,14 @@ import UIKit
 @IBDesignable public
 class FuelGaugeView: UIView {
 
-    @IBInspectable public var fuelLevel: Float = 0.0 {
+    @IBInspectable public var level: Float = 0.0 {
         didSet {
             updateGauge(oldValue)
         }
     }
     
-    @IBInspectable public var animationDuration: Float = 0.0
-    @IBInspectable public var animationDamping: Float = 0.4
+    @IBInspectable public var duration: Float = 0.0
+    @IBInspectable public var damping: Float = 0.4
     
     var backgroundView:UIImageView!
     var needleView:UIImageView!
@@ -70,9 +70,8 @@ class FuelGaugeView: UIView {
     }
 
     func rotateNeedleAndShadow(angle: Float) {
-        rotateViewWithDuration(needleView, angle: angle, duration: self.animationDuration, damping: animationDamping, velocity: 0)
-        rotateViewWithDuration(shadowView, angle: angle, duration: self.animationDuration, damping: animationDamping, velocity: 0)
-        
+        rotateViewWithDuration(needleView, angle: angle, duration:duration, damping: damping, velocity: 0)
+        rotateViewWithDuration(shadowView, angle: angle, duration: duration, damping: damping, velocity: 0)
     }
     
     func rotateView(view: UIView, angle: Float) {
@@ -91,13 +90,13 @@ class FuelGaugeView: UIView {
     }
     
     func updateGauge(oldValue: Float) {
-        let deltaAngle = calculateDeltaAngleForFuelLevel(fuelLevel, oldValue: oldValue)
+        let deltaAngle = calculateDeltaAngleForFuelLevel(level, oldValue: oldValue)
         rotateNeedleAndShadow(deltaAngle)
     }
     
     func calculateDeltaAngleForFuelLevel(value: Float, oldValue: Float) -> Float {
         let previousRotation = calculateRotationRadiansForFuelLevel(oldValue)
-        let newRotation = calculateRotationRadiansForFuelLevel(fuelLevel)
+        let newRotation = calculateRotationRadiansForFuelLevel(level)
         return newRotation - previousRotation
     }
 }
