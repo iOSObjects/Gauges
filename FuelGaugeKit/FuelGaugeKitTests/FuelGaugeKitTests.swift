@@ -187,6 +187,13 @@ class FuelGaugeKitTests: XCTestCase {
         XCTAssertTrue(fuelGauge.rotateViewWasCalled, "Should be called as a result of setting fuel level")
     }
     
+    func testSettingFuelLevelWithDurationCallsRotateViewwithDuration() {
+        XCTAssertFalse(fuelGauge.rotateViewWithDurationWasCalled, "Should not be called before test starts")
+        fuelGauge.animationDuration = 1.0
+        fuelGauge.fuelLevel = 0.234
+        XCTAssertTrue(fuelGauge.rotateViewWithDurationWasCalled, "Should be called as a result of setting fuel level")
+    }
+    
     //MARK: Helper methods
     func calculateRadiansForDegrees(degrees: Float) -> Float {
         let radians = degrees / 180.0 * Float(M_PI)
