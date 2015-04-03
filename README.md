@@ -2,7 +2,7 @@
 Automotive gauge style iOS custom UI controls
 
 Status: 
-* FuelGauge: partially constructed
+* FuelGauge: working with minor issues
 * Speedometer: not started yet
 * Tachometer: not started yet
 
@@ -28,13 +28,16 @@ All code is being done using TDD.
 
 ![Image of fuel gauge](/assets/FuelGauge180.png)
 The FuelGauge is an automotive style fuel gauge.
-It is packaged as an iOS framework that you can include in your
-own projects as source code, or simply add it as a separate package.
-It implements spring animations.
+It is packaged as an iOS 8 framework that you can include in your
+own iOS 8 projects as source code.
+Alternatively, you can simply copy the source code and assets to your project.
+When animationDuration is set to non-zero, the needle movement will be spring animated.
 
 ### Properties
 
 * fuelLevel: Float (0.0 to 1.0)
+* animationDuration: Float specifies time used to animate needle movements. 0.0 results in no animation. 1.0 is a good value.
+* animationDamping: Float is the spring damping for the animation. Small values result in lots of bounce. 1.0 results in no bounce.
 
 
 ## Speedometer
@@ -46,3 +49,9 @@ A speedometer gauge is in the works.
 
 ![Image of tachometer gauge](/assets/Tachometer180.png)
 A tachometer gauge is in the works.
+
+## iOS 8 Framework Installation
+1. Download code and drag the FuelGaugeKit project from Finder onto the project navigator pane of your project. Note that you may need to restart Xcode after doing this if subsequent steps don't work.
+1. Add FuelGaugeKit framework to the target dependencies build phase setting for your app target. Restart Xcode if the FuelGaugeFramework does not appear in the list after clicking '+'
+1. Add FuelGaugeKit framework to embedded binaries in app's general build settings.
+
