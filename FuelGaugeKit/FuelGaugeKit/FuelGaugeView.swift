@@ -41,7 +41,7 @@ class FuelGaugeView: UIView {
     func createAndRotateSubviewWithImageNamed(name: String) -> UIImageView {
         let newView = createSubviewWithImageNamed(name)
         let angleForEmpty = calculateRotationRadiansForFuelLevel(0.0)
-        rotateView(newView, angle: angleForEmpty)
+        rotateView(newView, angle: angleForEmpty, duration: 0, damping: 0, velocity: 0)
         return newView
     }
     
@@ -70,23 +70,15 @@ class FuelGaugeView: UIView {
     }
 
     func rotateNeedleAndShadow(angle: Float) {
-        rotateViewWithDuration(needleView, angle: angle, duration:duration, damping: damping, velocity: 0)
-        rotateViewWithDuration(shadowView, angle: angle, duration: duration, damping: damping, velocity: 0)
+        rotateView(needleView, angle: angle, duration:duration, damping: damping, velocity: 0)
+        rotateView(shadowView, angle: angle, duration: duration, damping: damping, velocity: 0)
     }
     
-    func rotateView(view: UIView, angle: Float) {
-        view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle))
-    }
-    
-    func rotateViewWithDuration(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
+    func rotateView(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
         
-        if duration == 0.0 {
-            return rotateView(view, angle: angle)
-        }else{
             UIView.animateWithDuration(NSTimeInterval(duration), delay: 0, usingSpringWithDamping: CGFloat(damping), initialSpringVelocity: CGFloat(velocity), options: nil, animations: {
-                self.rotateView(view, angle: angle)
+                view.transform = CGAffineTransformRotate(view.transform, CGFloat(angle))
             }, completion: nil )
-        }
     }
     
     func updateGauge(oldValue: Float) {

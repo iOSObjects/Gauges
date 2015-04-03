@@ -8,25 +8,18 @@ import XCTest
 
 class SpyFuelGaugeView: FuelGaugeView {
     var rotateViewWasCalled: Bool = false
-    var rotateViewWithDurationWasCalled: Bool = false
     var rotateViewAngle: Float = 0.0
     var rotateViewDuration: Float = 0.0
     var rotateViewDamping: Float = 0.0
     var rotateViewVelocity: Float = 0.0
     
-    override func rotateView(view: UIView, angle: Float) {
+    override func rotateView(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
         rotateViewWasCalled = true
-        rotateViewAngle = angle
-        super.rotateView(view, angle: angle)
-    }
-    
-    override func rotateViewWithDuration(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
-        rotateViewWithDurationWasCalled = true
         rotateViewAngle = angle
         rotateViewDuration = duration
         rotateViewDamping = damping
         rotateViewVelocity = velocity
-        super.rotateViewWithDuration(view, angle: angle, duration: duration, damping: damping, velocity: velocity)
+        super.rotateView(view, angle: angle, duration: duration, damping: damping, velocity: velocity)
     }
 }
 
@@ -40,7 +33,6 @@ class FuelGaugeKitTests: XCTestCase {
         fuelGauge.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 100)
         fuelGauge.layoutSubviews()
         fuelGauge.rotateViewWasCalled = false
-        fuelGauge.rotateViewWithDurationWasCalled = false
     }
     
     func testFuelGaugeInstantiated() {
@@ -188,10 +180,10 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testSettingFuelLevelWithDurationCallsRotateViewwithDuration() {
-        XCTAssertFalse(fuelGauge.rotateViewWithDurationWasCalled, "Should not be called before test starts")
+        XCTAssertFalse(fuelGauge.rotateViewWasCalled, "Should not be called before test starts")
         fuelGauge.duration = 1.0
         fuelGauge.level = 0.234
-        XCTAssertTrue(fuelGauge.rotateViewWithDurationWasCalled, "Should be called as a result of setting fuel level")
+        XCTAssertTrue(fuelGauge.rotateViewWasCalled, "Should be called as a result of setting fuel level")
     }
     
     //MARK: Helper methods
