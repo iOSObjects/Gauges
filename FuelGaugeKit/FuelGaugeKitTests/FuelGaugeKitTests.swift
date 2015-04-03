@@ -32,13 +32,15 @@ class SpyFuelGaugeView: FuelGaugeView {
 
 class FuelGaugeKitTests: XCTestCase {
     
-    var fuelGauge: FuelGaugeView!
+    var fuelGauge: SpyFuelGaugeView!
     
     override func setUp() {
         super.setUp()
         fuelGauge = SpyFuelGaugeView()
         fuelGauge.frame = CGRect(x: 0.0, y: 0.0, width: 100, height: 100)
         fuelGauge.layoutSubviews()
+        fuelGauge.rotateViewWasCalled = false
+        fuelGauge.rotateViewWithDurationWasCalled = false
     }
     
     func testFuelGaugeInstantiated() {
@@ -180,7 +182,9 @@ class FuelGaugeKitTests: XCTestCase {
     }
     
     func testSettingFuelLevelCallsRotateView() {
-        
+        XCTAssertFalse(fuelGauge.rotateViewWasCalled, "Should not be called before test starts")
+        fuelGauge.fuelLevel = 0.123
+        XCTAssertTrue(fuelGauge.rotateViewWasCalled, "Should be called as a result of setting fuel level")
     }
     
     //MARK: Helper methods
