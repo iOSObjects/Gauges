@@ -54,4 +54,5 @@ A tachometer gauge is in the works.
 1. Download code and drag the FuelGaugeKit project from Finder onto the project navigator pane of your project. Note that you may need to restart Xcode after doing this if subsequent steps don't work.
 1. Add FuelGaugeKit framework to the target dependencies build phase setting for your app target. Restart Xcode if the FuelGaugeFramework does not appear in the list after clicking '+'
 1. Add FuelGaugeKit framework to embedded binaries in app's general build settings.
+1. If using a storyboard, drag a UIView onto it. Then in the identity Inspector, change the UIView's class to FuelGaugeView, and module to FuelGaugeKit. (Restart Xcode if these options are not listed).
 
