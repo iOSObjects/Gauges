@@ -92,7 +92,8 @@ class FuelGaugeView: UIView {
     
     func rotateViewIn2Parts(view: UIView, angle: Float, duration: Float, damping: Float, velocity: Float) {
         
-        let secondVelocity = (angle / 2.0) / Float(duration*0.2)
+        let secondVelocity = abs((angle / 2.0) / Float(duration*0.2))
+        
         
         UIView.animateWithDuration(NSTimeInterval(duration*0.2), delay: NSTimeInterval(0), options: UIViewAnimationOptions.CurveLinear, animations: {
             
