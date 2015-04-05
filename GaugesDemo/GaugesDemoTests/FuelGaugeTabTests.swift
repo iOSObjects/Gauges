@@ -49,4 +49,10 @@ class FuelGaugeTabTests: XCTestCase {
         XCTAssertEqualWithAccuracy(level, 0.0, 0.0001, "Slider s/b zero but is \(level)")
     }
     
+    func testFullButtonSetsSliderToOne() {
+        vc.fullPressed(vc.fullButton)
+        let level = vc.slider.value
+        XCTAssertEqualWithAccuracy(level, 1.0, 0.0001, "Slider s/b 1.0 but is \(level)")
+    }
+    
 }
