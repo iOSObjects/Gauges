@@ -11,6 +11,8 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var emptyButton: UIButton!
+    @IBOutlet weak var fullButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
