@@ -28,4 +28,9 @@ class FuelGaugeTabTests: XCTestCase {
         XCTAssertNotNil(vc, "FirstViewController not found")
     }
     
+    func testSliderCreated() {
+        let slider = vc.slider
+        XCTAssertNotNil(slider, "Slider not created or connected")
+    }
+    
 }
