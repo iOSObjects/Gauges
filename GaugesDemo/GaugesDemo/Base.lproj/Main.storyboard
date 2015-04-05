@@ -25,6 +25,9 @@
                                 <state key="normal" title="Empty">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emptyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="wjE-nt-5a8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a3-Bg-dGd">
                                 <rect key="frame" x="540" y="517" width="28" height="21"/>
