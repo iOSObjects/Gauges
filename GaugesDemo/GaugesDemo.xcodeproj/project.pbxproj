@@ -14,6 +14,7 @@
 		138FB4271AD15A5900F13443 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4261AD15A5900F13443 /* Images.xcassets */; };
 		138FB42A1AD15A5900F13443 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4281AD15A5900F13443 /* LaunchScreen.xib */; };
 		138FB4361AD15A5900F13443 /* GaugesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB4351AD15A5900F13443 /* GaugesDemoTests.swift */; };
+		139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				138FB4361AD15A5900F13443 /* GaugesDemoTests.swift in Sources */,
+				139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +419,7 @@
 				138FB43B1AD15A5900F13443 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		138FB43C1AD15A5900F13443 /* Build configuration list for PBXNativeTarget "GaugesDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +428,7 @@
 				138FB43E1AD15A5900F13443 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
