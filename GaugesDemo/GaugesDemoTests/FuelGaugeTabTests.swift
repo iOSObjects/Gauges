@@ -43,4 +43,10 @@ class FuelGaugeTabTests: XCTestCase {
         XCTAssertNotNil(fullButton, "Full button not created or connected")
     }
     
+    func testEmptyButtonSetsSliderToZero() {
+        vc.emptyPressed(vc.emptyButton)
+        let level = vc.slider.value
+        XCTAssertNotEqualWithAccuracy(level, 0.0, 0.0001, "Slider s/b zero but is \(level)")
+    }
+    
 }
