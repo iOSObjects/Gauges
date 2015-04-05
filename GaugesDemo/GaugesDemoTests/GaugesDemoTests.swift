@@ -11,9 +11,18 @@ import XCTest
 
 class GaugesDemoTests: XCTestCase {
     
+    var application: UIApplication!
+    var window: UIWindow!
+    var tabBarController: UITabBarController!
+    var tabBar: UITabBar!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        application = UIApplication.sharedApplication()
+        window = application.keyWindow
+        tabBarController = window.rootViewController as! UITabBarController
+        tabBar = tabBarController.tabBar
     }
     
     override func tearDown() {
@@ -21,16 +30,20 @@ class GaugesDemoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testApplicationCreated() {
+        XCTAssertNotNil(application, "UIApplication not instantiated")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testWindowCreated() {
+        XCTAssertNotNil(window, "UIWindow not instantiated")
+    }
+    
+    func testTabBarControllerCreated() {
+        XCTAssertNotNil(tabBarController, "UITabBarController not instantiated")
+    }
+    
+    func testTabBarCreated() {
+        XCTAssertNotNil(tabBar, "UITabBar not instantiated")
     }
     
 }
