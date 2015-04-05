@@ -29,40 +29,39 @@
                                     <action selector="emptyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="wjE-nt-5a8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a3-Bg-dGd">
-                                <rect key="frame" x="540" y="517" width="28" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnZ-h9-9L5">
+                                <rect key="frame" x="538" y="513" width="30" height="30"/>
+                                <state key="normal" title="Full">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fullPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Xnu-Sf-OSm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Bx8-DA-eF1" secondAttribute="bottom" constant="8" id="2TT-Ei-LpY"/>
                             <constraint firstItem="qW4-nc-O91" firstAttribute="centerY" secondItem="Bx8-DA-eF1" secondAttribute="centerY" id="4sz-5K-EH0"/>
-                            <constraint firstItem="qW4-nc-O91" firstAttribute="centerY" secondItem="0a3-Bg-dGd" secondAttribute="centerY" constant="0.5" id="55C-oJ-i4a"/>
+                            <constraint firstItem="cnZ-h9-9L5" firstAttribute="leading" secondItem="qW4-nc-O91" secondAttribute="trailing" constant="14" id="5st-ks-JkR"/>
                             <constraint firstItem="qW4-nc-O91" firstAttribute="centerY" secondItem="Bx8-DA-eF1" secondAttribute="centerY" id="6kY-U2-frM"/>
+                            <constraint firstItem="cnZ-h9-9L5" firstAttribute="centerY" secondItem="qW4-nc-O91" secondAttribute="centerY" id="7fJ-De-YJT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cnZ-h9-9L5" secondAttribute="trailing" constant="16" id="8sw-zN-9pO"/>
                             <constraint firstItem="Bx8-DA-eF1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="16" id="Fh1-oQ-WvD"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="0a3-Bg-dGd" secondAttribute="bottom" constant="13" id="FwJ-JL-f88"/>
                             <constraint firstItem="qW4-nc-O91" firstAttribute="leading" secondItem="Bx8-DA-eF1" secondAttribute="trailing" constant="16" id="LV4-Sz-kpg"/>
-                            <constraint firstItem="0a3-Bg-dGd" firstAttribute="leading" secondItem="qW4-nc-O91" secondAttribute="trailing" constant="16" id="Q1s-No-BqJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0a3-Bg-dGd" secondAttribute="trailing" constant="16" id="ggY-Zr-gVj"/>
-                            <constraint firstItem="qW4-nc-O91" firstAttribute="centerY" secondItem="0a3-Bg-dGd" secondAttribute="centerY" id="jjH-VX-lHa"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="qW4-nc-O91" secondAttribute="bottom" constant="8" id="vvU-a9-3tk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="55C-oJ-i4a"/>
                                 <exclude reference="6kY-U2-frM"/>
                                 <exclude reference="2TT-Ei-LpY"/>
-                                <exclude reference="FwJ-JL-f88"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fuel" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="emptyButton" destination="Bx8-DA-eF1" id="yGg-zo-6aR"/>
-                        <outlet property="fullButton" destination="0a3-Bg-dGd" id="rCP-8x-xD5"/>
+                        <outlet property="fullButton" destination="cnZ-h9-9L5" id="HIh-ZD-985"/>
                         <outlet property="slider" destination="qW4-nc-O91" id="ypF-L7-5hh"/>
                     </connections>
                 </viewController>

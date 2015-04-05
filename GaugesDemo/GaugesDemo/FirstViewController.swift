@@ -12,7 +12,7 @@ class FirstViewController: UIViewController {
 
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var emptyButton: UIButton!
-    @IBOutlet weak var fullButton: UILabel!
+    @IBOutlet weak var fullButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,5 +28,8 @@ class FirstViewController: UIViewController {
         slider.value = 0.0
     }
 
+    @IBAction func fullPressed(sender: AnyObject) {
+        slider.value = 1.0
+    }
 }
 
