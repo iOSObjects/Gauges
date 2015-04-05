@@ -46,4 +46,11 @@ class GaugesDemoTests: XCTestCase {
         XCTAssertNotNil(tabBar, "UITabBar not instantiated")
     }
     
+    func testFirstItemIsFuelGauge() {
+        let items = tabBar.items as! [UITabBarItem]
+        let firstItem = items[0]
+        let firstTitle = firstItem.title!
+        XCTAssertEqual(firstTitle, "Fuel", "First item title expected to be Fuel but is \(firstTitle)")
+    }
+    
 }
