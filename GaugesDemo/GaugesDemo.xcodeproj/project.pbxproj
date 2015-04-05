@@ -15,6 +15,8 @@
 		138FB42A1AD15A5900F13443 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4281AD15A5900F13443 /* LaunchScreen.xib */; };
 		138FB4361AD15A5900F13443 /* GaugesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB4351AD15A5900F13443 /* GaugesDemoTests.swift */; };
 		139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FirstViewController.swift */; };
+		139EA64E1AD16931005F029D /* FuelGaugeTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EA64D1AD16931005F029D /* FuelGaugeTabTests.swift */; };
+		139EA64F1AD16984005F029D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4231AD15A5900F13443 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 		138FB42F1AD15A5900F13443 /* GaugesDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaugesDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138FB4341AD15A5900F13443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138FB4351AD15A5900F13443 /* GaugesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugesDemoTests.swift; sourceTree = "<group>"; };
+		139EA64D1AD16931005F029D /* FuelGaugeTabTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelGaugeTabTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 			children = (
 				138FB4351AD15A5900F13443 /* GaugesDemoTests.swift */,
 				138FB4331AD15A5900F13443 /* Supporting Files */,
+				139EA64D1AD16931005F029D /* FuelGaugeTabTests.swift */,
 			);
 			path = GaugesDemoTests;
 			sourceTree = "<group>";
@@ -206,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				139EA64F1AD16984005F029D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +233,7 @@
 			files = (
 				138FB4361AD15A5900F13443 /* GaugesDemoTests.swift in Sources */,
 				139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */,
+				139EA64E1AD16931005F029D /* FuelGaugeTabTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
