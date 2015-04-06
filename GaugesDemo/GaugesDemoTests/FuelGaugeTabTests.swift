@@ -54,5 +54,11 @@ class FuelGaugeTabTests: XCTestCase {
         let level = vc.slider.value
         XCTAssertEqualWithAccuracy(level, 1.0, 0.0001, "Slider s/b 1.0 but is \(level)")
     }
+
+    func testFuelGaugeViewCreated() {
+        let fuelGauge = vc.fuelGauge
+        XCTAssertNotNil(fuelGauge, "Fuel gauge view not created or connected")
+    }
     
+
 }
