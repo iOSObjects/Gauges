@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import FuelGaugeKit
 
 class FuelGaugeTabTests: XCTestCase {
 
@@ -60,5 +61,10 @@ class FuelGaugeTabTests: XCTestCase {
         XCTAssertNotNil(fuelGauge, "Fuel gauge view not created or connected")
     }
     
+    func testThatFuelGaugeViewSubclassesFuelGaugeKit() {
+        let fuelGauge = vc.fuelGauge
+        
+        XCTAssert(fuelGauge is FuelGaugeView, "Fuel gauge view not a subclass of FuelGaugeView")
+    }
 
 }

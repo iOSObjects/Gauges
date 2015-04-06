@@ -17,6 +17,8 @@
 		139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FirstViewController.swift */; };
 		139EA64E1AD16931005F029D /* FuelGaugeTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EA64D1AD16931005F029D /* FuelGaugeTabTests.swift */; };
 		139EA64F1AD16984005F029D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4231AD15A5900F13443 /* Main.storyboard */; };
+		139EA6591AD2ABFD005F029D /* FuelGaugeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139EA6561AD2ABD1005F029D /* FuelGaugeKit.framework */; };
+		139EA65A1AD2ABFD005F029D /* FuelGaugeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 139EA6561AD2ABD1005F029D /* FuelGaugeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +29,42 @@
 			remoteGlobalIDString = 138FB4171AD15A5900F13443;
 			remoteInfo = GaugesDemo;
 		};
+		139EA6551AD2ABD1005F029D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139EA6501AD2ABD1005F029D /* FuelGaugeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1338DF6A1ABAEB2200C39029;
+			remoteInfo = FuelGaugeKit;
+		};
+		139EA6571AD2ABD1005F029D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139EA6501AD2ABD1005F029D /* FuelGaugeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1338DF751ABAEB2200C39029;
+			remoteInfo = FuelGaugeKitTests;
+		};
+		139EA65B1AD2ABFD005F029D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139EA6501AD2ABD1005F029D /* FuelGaugeKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1338DF691ABAEB2200C39029;
+			remoteInfo = FuelGaugeKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		139EA65D1AD2ABFD005F029D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				139EA65A1AD2ABFD005F029D /* FuelGaugeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		138FB4181AD15A5900F13443 /* GaugesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaugesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +79,7 @@
 		138FB4341AD15A5900F13443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138FB4351AD15A5900F13443 /* GaugesDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugesDemoTests.swift; sourceTree = "<group>"; };
 		139EA64D1AD16931005F029D /* FuelGaugeTabTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuelGaugeTabTests.swift; sourceTree = "<group>"; };
+		139EA6501AD2ABD1005F029D /* FuelGaugeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FuelGaugeKit.xcodeproj; path = ../FuelGaugeKit/FuelGaugeKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				139EA6591AD2ABFD005F029D /* FuelGaugeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +104,7 @@
 		138FB40F1AD15A5900F13443 = {
 			isa = PBXGroup;
 			children = (
+				139EA6501AD2ABD1005F029D /* FuelGaugeKit.xcodeproj */,
 				138FB41A1AD15A5900F13443 /* GaugesDemo */,
 				138FB4321AD15A5900F13443 /* GaugesDemoTests */,
 				138FB4191AD15A5900F13443 /* Products */,
@@ -120,6 +160,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		139EA6511AD2ABD1005F029D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				139EA6561AD2ABD1005F029D /* FuelGaugeKit.framework */,
+				139EA6581AD2ABD1005F029D /* FuelGaugeKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,10 +179,12 @@
 				138FB4141AD15A5900F13443 /* Sources */,
 				138FB4151AD15A5900F13443 /* Frameworks */,
 				138FB4161AD15A5900F13443 /* Resources */,
+				139EA65D1AD2ABFD005F029D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				139EA65C1AD2ABFD005F029D /* PBXTargetDependency */,
 			);
 			name = GaugesDemo;
 			productName = GaugesDemo;
@@ -187,6 +238,12 @@
 			mainGroup = 138FB40F1AD15A5900F13443;
 			productRefGroup = 138FB4191AD15A5900F13443 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 139EA6511AD2ABD1005F029D /* Products */;
+					ProjectRef = 139EA6501AD2ABD1005F029D /* FuelGaugeKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				138FB4171AD15A5900F13443 /* GaugesDemo */,
@@ -194,6 +251,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		139EA6561AD2ABD1005F029D /* FuelGaugeKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FuelGaugeKit.framework;
+			remoteRef = 139EA6551AD2ABD1005F029D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		139EA6581AD2ABD1005F029D /* FuelGaugeKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FuelGaugeKitTests.xctest;
+			remoteRef = 139EA6571AD2ABD1005F029D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		138FB4161AD15A5900F13443 /* Resources */ = {
@@ -244,6 +318,11 @@
 			isa = PBXTargetDependency;
 			target = 138FB4171AD15A5900F13443 /* GaugesDemo */;
 			targetProxy = 138FB4301AD15A5900F13443 /* PBXContainerItemProxy */;
+		};
+		139EA65C1AD2ABFD005F029D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FuelGaugeKit;
+			targetProxy = 139EA65B1AD2ABFD005F029D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
