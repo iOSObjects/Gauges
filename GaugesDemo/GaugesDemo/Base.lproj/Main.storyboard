@@ -38,6 +38,10 @@
                                     <action selector="fullPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Xnu-Sf-OSm"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-iX-rjY">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="505"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,20 +51,27 @@
                             <constraint firstItem="qW4-nc-O91" firstAttribute="centerY" secondItem="Bx8-DA-eF1" secondAttribute="centerY" id="6kY-U2-frM"/>
                             <constraint firstItem="cnZ-h9-9L5" firstAttribute="centerY" secondItem="qW4-nc-O91" secondAttribute="centerY" id="7fJ-De-YJT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cnZ-h9-9L5" secondAttribute="trailing" constant="16" id="8sw-zN-9pO"/>
+                            <constraint firstItem="gPe-iX-rjY" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="B0m-aM-Bi6"/>
+                            <constraint firstItem="gPe-iX-rjY" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="FXS-TE-8zB"/>
                             <constraint firstItem="Bx8-DA-eF1" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="16" id="Fh1-oQ-WvD"/>
                             <constraint firstItem="qW4-nc-O91" firstAttribute="leading" secondItem="Bx8-DA-eF1" secondAttribute="trailing" constant="16" id="LV4-Sz-kpg"/>
+                            <constraint firstItem="cnZ-h9-9L5" firstAttribute="top" secondItem="gPe-iX-rjY" secondAttribute="bottom" constant="8" id="gpu-rw-65a"/>
+                            <constraint firstItem="qW4-nc-O91" firstAttribute="top" secondItem="gPe-iX-rjY" secondAttribute="bottom" constant="8" id="tso-xF-oV3"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="qW4-nc-O91" secondAttribute="bottom" constant="8" id="vvU-a9-3tk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gPe-iX-rjY" secondAttribute="trailing" id="xuM-2Q-eDF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="6kY-U2-frM"/>
                                 <exclude reference="2TT-Ei-LpY"/>
+                                <exclude reference="gpu-rw-65a"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fuel" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="emptyButton" destination="Bx8-DA-eF1" id="yGg-zo-6aR"/>
+                        <outlet property="fuelGauge" destination="gPe-iX-rjY" id="9j2-1K-12P"/>
                         <outlet property="fullButton" destination="cnZ-h9-9L5" id="HIh-ZD-985"/>
                         <outlet property="slider" destination="qW4-nc-O91" id="ypF-L7-5hh"/>
                     </connections>

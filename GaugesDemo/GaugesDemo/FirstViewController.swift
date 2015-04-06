@@ -10,6 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var fuelGauge: UIView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var emptyButton: UIButton!
     @IBOutlet weak var fullButton: UIButton!
