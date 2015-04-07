@@ -27,15 +27,41 @@ class FuelGaugeView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
+        var needToCreateConstraints = false
+        
         if backgroundView == nil {
             backgroundView = createSubviewWithImageNamed("FuelGaugeBG")
+            needToCreateConstraints = true
         }
         if needleView == nil {
             needleView = createAndRotateSubviewWithImageNamed("FuelGaugeNeedle")
+            needToCreateConstraints = true
         }
         if shadowView == nil {
             shadowView = createAndRotateSubviewWithImageNamed("FuelGaugeShadow")
+            needToCreateConstraints = true
         }
+        
+        if needToCreateConstraints {
+            createConstraints()
+        }
+    }
+    
+    func createConstraints() {
+        let viewsDictionary = ["background":backgroundView, "needle":needleView, "shadow":shadowView]
+
+        backgroundView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[background]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[background]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary))
+        
+        needleView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[needle]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[needle]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary))
+        
+        shadowView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[shadow]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary))
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[shadow]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary))
+        
     }
     
     func createAndRotateSubviewWithImageNamed(name: String) -> UIImageView {
