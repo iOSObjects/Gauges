@@ -8,7 +8,7 @@
         <!--Fuel-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="FuelVC" id="9pv-A4-QxB" customClass="FirstViewController" customModule="GaugesDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FuelVC" id="9pv-A4-QxB" customClass="FuelGaugeViewController" customModule="GaugesDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -38,7 +38,7 @@
                                     <action selector="fullPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Xnu-Sf-OSm"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-iX-rjY" customClass="FuelGaugeView" customModule="FuelGaugeKit">
+                            <view contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-iX-rjY" customClass="FuelGaugeView" customModule="FuelGaugeKit">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="505"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>

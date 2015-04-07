@@ -12,13 +12,13 @@ import FuelGaugeKit
 
 class FuelGaugeTabTests: XCTestCase {
 
-    var vc: FirstViewController!
+    var vc: FuelGaugeViewController!
     
     override func setUp() {
         super.setUp()
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
-        vc = storyboard.instantiateViewControllerWithIdentifier("FuelVC") as! FirstViewController
+        vc = storyboard.instantiateViewControllerWithIdentifier("FuelVC") as! FuelGaugeViewController
         
         let dummy = vc.view // force loading subviews and setting outlets
         

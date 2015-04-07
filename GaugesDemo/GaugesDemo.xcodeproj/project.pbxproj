@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		138FB41E1AD15A5900F13443 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41D1AD15A5900F13443 /* AppDelegate.swift */; };
-		138FB4201AD15A5900F13443 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FirstViewController.swift */; };
+		138FB4201AD15A5900F13443 /* FuelGaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FuelGaugeViewController.swift */; };
 		138FB4221AD15A5900F13443 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB4211AD15A5900F13443 /* SecondViewController.swift */; };
 		138FB4251AD15A5900F13443 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4231AD15A5900F13443 /* Main.storyboard */; };
 		138FB4271AD15A5900F13443 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4261AD15A5900F13443 /* Images.xcassets */; };
 		138FB42A1AD15A5900F13443 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4281AD15A5900F13443 /* LaunchScreen.xib */; };
 		138FB4361AD15A5900F13443 /* GaugesDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB4351AD15A5900F13443 /* GaugesDemoTests.swift */; };
-		139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FirstViewController.swift */; };
+		139EA61A1AD161B4005F029D /* FuelGaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138FB41F1AD15A5900F13443 /* FuelGaugeViewController.swift */; };
 		139EA64E1AD16931005F029D /* FuelGaugeTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139EA64D1AD16931005F029D /* FuelGaugeTabTests.swift */; };
 		139EA64F1AD16984005F029D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138FB4231AD15A5900F13443 /* Main.storyboard */; };
 		139EA6591AD2ABFD005F029D /* FuelGaugeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139EA6561AD2ABD1005F029D /* FuelGaugeKit.framework */; };
@@ -70,7 +70,7 @@
 		138FB4181AD15A5900F13443 /* GaugesDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaugesDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138FB41C1AD15A5900F13443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138FB41D1AD15A5900F13443 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		138FB41F1AD15A5900F13443 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		138FB41F1AD15A5900F13443 /* FuelGaugeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelGaugeViewController.swift; sourceTree = "<group>"; };
 		138FB4211AD15A5900F13443 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		138FB4241AD15A5900F13443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		138FB4261AD15A5900F13443 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				138FB41D1AD15A5900F13443 /* AppDelegate.swift */,
-				138FB41F1AD15A5900F13443 /* FirstViewController.swift */,
+				138FB41F1AD15A5900F13443 /* FuelGaugeViewController.swift */,
 				138FB4211AD15A5900F13443 /* SecondViewController.swift */,
 				138FB4231AD15A5900F13443 /* Main.storyboard */,
 				138FB4261AD15A5900F13443 /* Images.xcassets */,
@@ -297,7 +297,7 @@
 			files = (
 				138FB4221AD15A5900F13443 /* SecondViewController.swift in Sources */,
 				138FB41E1AD15A5900F13443 /* AppDelegate.swift in Sources */,
-				138FB4201AD15A5900F13443 /* FirstViewController.swift in Sources */,
+				138FB4201AD15A5900F13443 /* FuelGaugeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				138FB4361AD15A5900F13443 /* GaugesDemoTests.swift in Sources */,
-				139EA61A1AD161B4005F029D /* FirstViewController.swift in Sources */,
+				139EA61A1AD161B4005F029D /* FuelGaugeViewController.swift in Sources */,
 				139EA64E1AD16931005F029D /* FuelGaugeTabTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

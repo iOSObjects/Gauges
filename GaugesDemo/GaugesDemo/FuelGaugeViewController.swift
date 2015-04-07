@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FuelGaugeViewController: UIViewController {
 
     @IBOutlet weak var fuelGauge: UIView!
     @IBOutlet weak var slider: UISlider!
